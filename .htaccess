@@ -1,0 +1,12 @@
+# Activer le moteur de réécriture
+RewriteEngine On
+
+# Supprimer .html de l’URL s’il existe un fichier correspondant
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# Rediriger l’URL "/" vers index.html
+DirectoryIndex index.html
+
+# Facultatif : page 404 personnalisée si tu as une 404.html
+ErrorDocument 404 /404.html

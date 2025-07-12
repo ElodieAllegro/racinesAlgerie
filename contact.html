@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Racines d'Algérie</title>
+    <meta name="description" content="Contactez Racines d'Algérie pour organiser votre voyage en Algérie. Devis personnalisé, conseils et accompagnement sur-mesure.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Navigation principale">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1 class="logo-text">Racines d'Algérie</h1>
+                </div>
+                <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="index.html" class="nav-link" role="menuitem">Accueil</a></li>
+                    <li class="nav-dropdown" role="none">
+                        <a href="#" class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="consulting-voyage.html" role="menuitem">Consulting Voyage</a></li>
+                            <li><a href="accompagnement-consulat.html" role="menuitem">Accompagnement Consulat</a></li>
+                            <li><a href="accueil-aeroport.html" role="menuitem">Accueil Aéroport</a></li>
+                            <li><a href="accompagnement-place.html" role="menuitem">Accompagnement sur Place</a></li>
+                        </ul>
+                    </li>
+                    <li role="none"><a href="blog.html" class="nav-link" role="menuitem">Blog</a></li>
+                    <li role="none"><a href="contact.html" class="nav-link active" role="menuitem">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Contactez-nous</h1>
+                <p>Nous sommes là pour répondre à toutes vos questions et organiser votre voyage</p>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Nos coordonnées</h2>
+                        
+                        <div class="contact-item">
+                            <h3>📞 Téléphone</h3>
+                            <p><strong>France :</strong> +33 7 82 30 17 86</p>
+                            <p><strong>Algérie :</strong> +213 76 72 86 91</p>
+                            <p><em>Disponible 7j/7 de 9h à 20h</em></p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h3>✉️ Email</h3>
+                            <p>racinesdalgerie@gmail.com</p>
+                            <p><em>Réponse sous 24h maximum</em></p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h3>💬 WhatsApp</h3>
+                            <p>+33 7 82 30 17 86</p>
+                            <p><em>Pour une réponse rapide</em></p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h3>🌐 Réseaux sociaux</h3>
+                            <div class="social-links">
+                                <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                                <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                                <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <h3>⏰ Horaires</h3>
+                            <p><strong>Lundi - Vendredi :</strong> 9h - 20h</p>
+                            <p><strong>Samedi - Dimanche :</strong> 10h - 18h</p>
+                            <p><em>Urgences 24h/24 pour nos clients en voyage</em></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h2>Demande de devis</h2>
+                        <form class="contact-form" onsubmit="handleContact(event)">
+                            <div class="form-group">
+                                <label for="nom" class="form-label">Nom *</label>
+                                <input type="text" id="nom" name="nom" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prenom" class="form-label">Prénom *</label>
+                                <input type="text" id="prenom" name="prenom" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telephone" class="form-label">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service" class="form-label">Service souhaité *</label>
+                                <select id="service" name="service" class="form-select" required>
+                                    <option value="">Choisissez un service</option>
+                                    <option value="consulting-voyage">Consulting Voyage</option>
+                                    <option value="accompagnement-consulat">Accompagnement Consulat</option>
+                                    <option value="accueil-aeroport">Accueil Aéroport</option>
+                                    <option value="accompagnement-place">Accompagnement sur Place</option>
+                                    <option value="plusieurs">Plusieurs services</option>
+                                    <option value="autre">Autre demande</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dates" class="form-label">Dates souhaitées</label>
+                                <input type="text" id="dates" name="dates" class="form-input" placeholder="Ex: du 15 au 30 mars 2025">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budget" class="form-label">Budget approximatif</label>
+                                <select id="budget" name="budget" class="form-select">
+                                    <option value="">Non défini</option>
+                                    <option value="50-100">50€ - 100€</option>
+                                    <option value="100-200">100€ - 200€</option>
+                                    <option value="200-500">200€ - 500€</option>
+                                    <option value="500-1000">500€ - 1000€</option>
+                                    <option value="1000+">Plus de 1000€</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="voyageurs" class="form-label">Nombre de voyageurs</label>
+                                <select id="voyageurs" name="voyageurs" class="form-select">
+                                    <option value="1">1 personne</option>
+                                    <option value="2">2 personnes</option>
+                                    <option value="3-4">3-4 personnes</option>
+                                    <option value="5-8">5-8 personnes</option>
+                                    <option value="9+">Plus de 8 personnes</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Votre message *</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="Décrivez-nous votre projet, vos attentes, questions spécifiques..." required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" required>
+                                    J'accepte d'être contacté par Racines d'Algérie pour donner suite à ma demande *
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    J'accepte de recevoir des offres commerciales et actualités par email
+                                </label>
+                            </div>
+
+                            <button type="submit" class="cta-button" style="width: 100%;">Envoyer ma demande</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h2>Questions fréquentes</h2>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h3>Combien de temps à l'avance dois-je réserver ?</h3>
+                            <p>Nous recommandons de nous contacter au moins 2 semaines avant votre voyage pour les services d'accompagnement, et 48h minimum pour l'accueil aéroport.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Proposez-vous des devis gratuits ?</h3>
+                            <p>Oui, tous nos devis sont gratuits et sans engagement. Nous étudions votre demande et vous proposons une solution adaptée à vos besoins et budget.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Quels moyens de paiement acceptez-vous ?</h3>
+                            <p>Nous acceptons les virements bancaires, PayPal, et les paiements en espèces sur place pour certains services.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Que se passe-t-il en cas d'annulation ?</h3>
+                            <p>Nos conditions d'annulation varient selon le service. Généralement, l'annulation est gratuite jusqu'à 24-48h avant la prestation.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Parlez-vous d'autres langues que le français ?</h3>
+                            <p>Notre équipe parle français, arabe et berbère couramment. Nous avons également des guides parlant anglais pour nos services d'accompagnement.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Couvrez-vous toute l'Algérie ?</h3>
+                            <p>Oui, nous proposons nos services dans toute l'Algérie : Alger, Oran, Constantine, Annaba, et toutes les autres régions du pays.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Racines d'Algérie</h3>
+                    <p>Votre partenaire pour découvrir l'Algérie</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>+33 7 82 30 17 86</p>
+                    <p>+213 76 72 86 91</p>
+                    <p>racinesdalgerie@gmail.com</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Liens utiles</h4>
+                    <ul>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="cgv.html">Conditions générales de vente</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-link">f</a>
+                        <a href="#" aria-label="Twitter" class="social-link">t</a>
+                        <a href="#" aria-label="Instagram" class="social-link">i</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Racines d'Algérie. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        function handleContact(event) {
+            event.preventDefault();
+            
+            // Récupération des données du formulaire
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Simulation d'envoi
+            alert(`Merci ${data.prenom} ${data.nom} ! Votre demande concernant "${data.service}" a été envoyée. Nous vous contacterons sous 24h à l'adresse ${data.email}.`);
+            
+            // Reset du formulaire
+            event.target.reset();
+        }
+    </script>
+
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-3xl);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .contact-info {
+            background: var(--background-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .contact-item {
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .contact-item h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-md);
+        }
+
+        .contact-item p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .contact-form-container {
+            background: var(--background-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            cursor: pointer;
+            font-size: var(--font-size-xs);
+            line-height: 1.4;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .faq-section {
+            background: var(--background-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .faq-item {
+            padding: var(--spacing-lg);
+            background: var(--background-light);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .faq-item h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-md);
+        }
+
+        .faq-item p {
+            margin: 0;
+            font-size: var(--font-size-sm);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
