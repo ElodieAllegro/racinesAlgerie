@@ -34,7 +34,6 @@
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link active" >Accueil</a></li>
                     <li class="nav-dropdown">
-                        <a href="#" class="nav-link"  aria-haspopup="true" aria-expanded="false">Services</a>
                         <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Services</a>
                         <ul class="dropdown-menu">
                             <li><a href="consulting-voyage.html">Consulting Voyage</a></li>
@@ -52,14 +51,21 @@
     </header>
 
     <main>
-        <section class="hero" aria-labelledby="hero-title">
+        <section class="hero">
+            <img
+                src="public/assets/hero-img.avif"
+                alt="Paysage algérien au lever du soleil"
+                class="hero-img"
+                loading="eager"
+                decoding="async"
+            />
             <div class="hero-content">
-                <h1 id="hero-title" class="hero-title">Renouez avec vos racines</h1>
+                <h1 class="hero-title">Bienvenue sur Racines d’Algérie</h1>
                 <p class="hero-subtitle">Un accompagnement sur-mesure pour découvrir l'Algérie autrement</p>
-                <a href="#services" class="cta-button">Découvrez nos accompagnements</a>
+                <a href="#services" class="cta-button">Découvrir</a>
             </div>
-            <div class="hero-image" aria-hidden="true"></div>
         </section>
+
 
         <section class="intro-section">
             <div class="container">
@@ -70,7 +76,7 @@
                         <a href="#services" class="secondary-button">On s'occupe de tout</a>
                     </div>
                     <div class="intro-image" aria-hidden="true">
-                        <img class="images" src="public/assets/intro-image.jpg" alt="architecture algérienne" loading="lazy">
+                        <img class="images" src="public/assets/intro-image.avif" alt="architecture algérienne" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -99,7 +105,7 @@
                 <div class="services-grid">
                     <article class="service-card">
                         <div class="service-image service-consulting" aria-hidden="true">
-                            <img class="images" src="public/assets/Consulting.jpeg" alt="image d'un ordinateur" loading="lazy">
+                            <img class="images" src="public/assets/Consulting.avif" alt="image d'un ordinateur" loading="lazy">
                         </div>
                         <div class="service-content">
                             <h3>Consulting Voyage – Planifiez votre séjour</h3>
@@ -121,7 +127,7 @@
 
                     <article class="service-card">
                         <div class="service-image service-aeroport" aria-hidden="true">
-                            <img class="images" src="public/assets/accueil-assistance-aeroport.png" alt="image d'un aeroport" loading="lazy">
+                            <img class="images" src="public/assets/accueil-assistance-aeroport.avif" alt="image d'un aeroport" loading="lazy">
                         </div>
                         <div class="service-content">
                             <h3>Accueil et assistance à l'aéroport – Arrivez en toute sérénité</h3>
@@ -148,23 +154,32 @@
             <div class="container">
                 <h2 id="gallery-title" class="section-title">Galerie photos de clients</h2>
                 <div class="gallery-grid">
-                    <div class="gallery-item" tabindex="0" aria-label="Architecture traditionnelle algérienne">
-                        <img class="gallery-img" src="public/assets/gallery1.jpg" alt="architecture traditionnelle algérienne" loading="lazy">
+                    <div class="gallery-item" tabindex="0" aria-label="Architecture ruine">
+                        <img class="gallery-img" src="public/assets/gallery1.avif" alt="architecture traditionnelle algérienne" loading="lazy">
                     </div>
-                    <div class="gallery-item" tabindex="0" aria-label="Paysage désertique du Sahara">
-                        <img class="gallery-img" src="public/assets/gallery2.jpg" alt="paysage désertique du Sahara" loading="lazy">
+                    <div class="gallery-item" tabindex="0" aria-label="ville vu de haut">
+                        <img class="gallery-img" src="public/assets/gallery2.avif" alt="ville vu de haut " loading="lazy">
                     </div>
-                    <div class="gallery-item" tabindex="0" aria-label="Médina d'Alger">
-                        <img class="gallery-img" src="public/assets/gallery3.jpg" alt="Médina d'Alger" loading="lazy">
+                    <div class="gallery-item" tabindex="0" aria-label="rue d'Alger">
+                        <img class="gallery-img" src="public/assets/gallery3.avif" alt="rue d'Alger" loading="lazy">
                     </div>
                     <div class="gallery-item" tabindex="0" aria-label="Côte méditerranéenne">
-                        <img class="gallery-img" src="public/assets/gallery4.jpg" alt="Côte méditerranéenne" loading="lazy">
+                        <img class="gallery-img" src="public/assets/gallery4.avif" alt="Côte méditerranéenne port" loading="lazy">
                     </div>
-                    <div class="gallery-item" tabindex="0" aria-label="Monuments historiques">
-                        <img class="gallery-img" src="public/assets/gallery5.jpg" alt="Monuments historiques" loading="lazy">
+                    <div class="gallery-item" tabindex="0" aria-label="Vu des collines">
+                        <img class="gallery-img" src="public/assets/gallery5.avif" alt="Vu des collines" loading="lazy">
                     </div>
                     <div class="gallery-item" tabindex="0" aria-label="Artisanat local">
-                        <img class="gallery-img" src="public/assets/gallery6.jpg" alt="Artisanat local" loading="lazy">
+                        <img class="gallery-img" src="public/assets/gallery6.avif" alt="Artisanat local" loading="lazy">
+                    </div>
+                    <div class="gallery-item" tabindex="0" aria-label="Monuments historiques">
+                        <img class="gallery-img" src="public/assets/gallery7.avif" alt="Artisanat local" loading="lazy">
+                    </div>
+                    <div class="gallery-item" tabindex="0" aria-label="Eglise Alger">
+                        <img class="gallery-img" src="public/assets/gallery8.avif" alt="Artisanat local" loading="lazy">
+                    </div>
+                    <div class="gallery-item" tabindex="0" aria-label="lieux de vie traditionnel">
+                        <img class="gallery-img" src="public/assets/gallery10.avif" alt="Artisanat local" loading="lazy">
                     </div>
                 </div>
             </div>
