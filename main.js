@@ -1,7 +1,27 @@
-// Navigation mobile toggle
-document.addEventListener('DOMContentLoaded', function() {
+// Chargement asynchrone des ressources non-critiques
+function loadNonCriticalResources() {
+    // Charger Font Awesome de manière asynchrone
+    const fontAwesome = document.createElement('link');
+    fontAwesome.rel = 'stylesheet';
+    fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css';
+    fontAwesome.media = 'print';
+    fontAwesome.onload = function() { this.media = 'all'; };
+    document.head.appendChild(fontAwesome);
+}
+
+// Optimisation du chargement initial
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeApp);
+} else {
+    initializeApp();
+}
+
+function initializeApp() {
     // Initialiser les systèmes de cache et cookies
     console.log('🚀 Initialisation des systèmes de performance...');
+    
+    // Charger les ressources non-critiques après le chargement initial
+    setTimeout(loadNonCriticalResources, 100);
     
     // Vérifier si les gestionnaires sont disponibles
     if (window.cacheManager) {
@@ -265,11 +285,11 @@ document.addEventListener('DOMContentLoaded', function() {
     window.saveUserPreferences = saveUserPreferences;
     window.loadUserPreferences = loadUserPreferences;
     
-// Gestion du scroll pour le header sticky
-// Force le header à toujours rester visible
-const header = document.querySelector('.header');
-header.style.transform = 'translateY(0)';
-
+    // Gestion du scroll pour le header sticky
+    const header = document.querySelector('.header');
+    if (header) {
+        header.style.transform = 'translateY(0)';
+    }
 
     // Préchargement des images au survol
     // Cette fonctionnalité est maintenant gérée par PerformanceOptimizer
@@ -309,7 +329,7 @@ header.style.transform = 'translateY(0)';
             }
         }
     });
-});
+}
 
 // Utilitaires globaux
 window.utils = {

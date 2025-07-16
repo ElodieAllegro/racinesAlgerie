@@ -105,26 +105,17 @@ class PerformanceOptimizer {
      * Précharger les ressources critiques
      */
     preloadCriticalResources() {
-        const criticalResources = [
-            { href: '/css/variables.css', as: 'style' },
-            { href: '/css/layout.css', as: 'style' },
-            { href: '/css/components.css', as: 'style' },
-            { href: '/main.js', as: 'script' }
-        ];
-
-        criticalResources.forEach(resource => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.href = resource.href;
-            link.as = resource.as;
-            
-            if (resource.as === 'style') {
-                link.onload = () => {
-                    link.rel = 'stylesheet';
-                };
-            }
-            
-            document.head.appendChild(link);
+        // Précharger les images de la galerie de manière intelligente
+        const galleryImages = document.querySelectorAll('.gallery-img[data-src]');
+        const imageQueue = Array.from(galleryImages).slice(0, 3); // Précharger seulement les 3 premières
+        
+        imageQueue.forEach((img, index) => {
+            setTimeout(() => {
+                const link = document.createElement('link');
+                link.rel = 'prefetch';
+                link.href = img.dataset.src;
+                document.head.appendChild(link);
+            }, index * 100);
         });
     }
 
@@ -132,28 +123,13 @@ class PerformanceOptimizer {
      * Optimiser le chargement des polices
      */
     optimizeFonts() {
-        // Précharger les polices critiques
-        const fontPreloads = [
-            'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'
-        ];
-
-        fontPreloads.forEach(fontUrl => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.href = fontUrl;
-            link.as = 'style';
-            link.onload = () => {
-                link.rel = 'stylesheet';
-            };
-            document.head.appendChild(link);
-        });
-
         // Utiliser font-display: swap pour éviter le FOIT
         const style = document.createElement('style');
         style.textContent = `
             @font-face {
                 font-family: 'Inter';
                 font-display: swap;
+                font-weight: 400 700;
             }
         `;
         document.head.appendChild(style);
@@ -237,14 +213,27 @@ class PerformanceOptimizer {
      * Précharger les pages importantes
      */
     prefetchImportantPages() {
-        const importantPages = [
-            '/contact/contact.html',
-            '/accompagnement/consulting-voyage.html',
-            '/blog/blog.html'
-        ];
+        // Précharger seulement après interaction utilisateur
+        let hasInteracted = false;
+        
+        const startPrefetch = () => {
+            if (hasInteracted) return;
+            hasInteracted = true;
+            
+            const importantPages = [
+                'contact/contact.html',
+                'accompagnement/consulting-voyage.html',
+                'blog/blog.html'
+            ];
 
-        importantPages.forEach(page => {
-            this.prefetchPage(page);
+            importantPages.forEach((page, index) => {
+                setTimeout(() => this.prefetchPage(page), index * 200);
+            });
+        };
+        
+        // Déclencher après la première interaction
+        ['mousedown', 'touchstart', 'keydown'].forEach(event => {
+            document.addEventListener(event, startPrefetch, { once: true, passive: true });
         });
     }
 

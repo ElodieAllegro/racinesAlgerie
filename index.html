@@ -5,12 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Racines d'Algérie - Redécouvrez vos origines</title>
     <meta name="description" content="Racines d'Algérie vous accompagne dans votre voyage en Algérie : consulting voyage, démarches consulaires, accueil aéroport et accompagnement sur place.">
+    
+    <!-- DNS Prefetch pour les domaines externes -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preconnect pour les ressources critiques -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload des ressources critiques -->
     <link rel="preload" as="image" href="public/assets/hero-img.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="css/variables.css" as="style">
+    <link rel="preload" href="css/layout.css" as="style">
+    
+    <!-- CSS critique inline -->
+    <style>
+        /* CSS critique pour éviter le FOUC */
+        :root {
+            --primary-color: #4A90E2;
+            --primary-dark: #2C3E50;
+            --secondary-color: #cb6b2b;
+            --text-primary: #2C3E50;
+            --text-light: #FFFFFF;
+            --background-light: #FAFBFC;
+            --background-white: #FFFFFF;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background-light);
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            background-color: var(--background-light);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 var(--spacing-md);
+            color: white;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-xl);
+            background-color: var(--background-white);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+    </style>
+    
+    <!-- CSS non-critique chargé de manière asynchrone -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts avec display=swap pour éviter le FOIT -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"></noscript>
 </head>
 <body>
     <header class="header">

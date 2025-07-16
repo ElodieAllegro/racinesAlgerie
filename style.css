@@ -1,10 +1,10 @@
 /* Main CSS - Import des modules et styles de base */
 
-/* Import des modules CSS */
-@import url('css/variables.css');
-@import url('css/layout.css');
-@import url('css/components.css');
-@import url('css/cookies.css');
+/* Import des modules CSS avec media queries pour optimiser le chargement */
+@import url('css/variables.css') screen;
+@import url('css/layout.css') screen;
+@import url('css/components.css') screen;
+@import url('css/cookies.css') screen;
 
 /* Reset and base styles */
 * {
