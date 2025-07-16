@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="public/assets/hero-img.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -148,31 +147,31 @@
                 <h2 id="gallery-title" class="section-title">Galerie photos de clients</h2>
                 <div class="gallery-grid">
                     <div class="gallery-item" tabindex="0" aria-label="Architecture ruine">
-                        <img class="gallery-img" src="public/assets/gallery1.avif" alt="architecture traditionnelle algérienne" loading="lazy">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery1.avif" alt="architecture traditionnelle algérienne" loading="lazy">
                     </div>
                     <div class="gallery-item" tabindex="0" aria-label="ville vu de haut">
-                        <img class="gallery-img" src="public/assets/gallery2.avif" alt="ville vu de haut " loading="lazy">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery2.avif" alt="ville vu de haut " loading="lazy">
                     </div>
                     <div class="gallery-item" tabindex="0" aria-label="rue d'Alger">
-                        <img class="gallery-img" src="public/assets/gallery3.avif" alt="rue d'Alger" loading="lazy">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery3.avif" alt="rue d'Alger" loading="lazy">
                     </div>
                     <div class="gallery-item" tabindex="0" aria-label="Côte méditerranéenne">
-                        <img class="gallery-img" src="public/assets/gallery4.avif" alt="Côte méditerranéenne port" loading="lazy">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery4.avif" alt="Côte méditerranéenne port" loading="lazy">
                     </div>
                     <div class="gallery-item" tabindex="0" aria-label="Vu des collines">
-                        <img class="gallery-img" src="public/assets/gallery5.avif" alt="Vu des collines" loading="lazy">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery5.avif" alt="Vu des collines" loading="lazy">
                     </div>
                     <div class="gallery-item" tabindex="0" aria-label="Artisanat local">
-                        <img class="gallery-img" src="public/assets/gallery6.avif" alt="Artisanat local" loading="lazy">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery6.avif" alt="Artisanat local" loading="lazy">
                     </div>
                     <div class="gallery-item" tabindex="0" aria-label="Monuments historiques">
-                        <img class="gallery-img" src="public/assets/gallery7.avif" alt="Artisanat local" loading="lazy">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery7.avif" alt="Artisanat local" loading="lazy">
                     </div>
                     <div class="gallery-item" tabindex="0" aria-label="Eglise Alger">
-                        <img class="gallery-img" src="public/assets/gallery8.avif" alt="Artisanat local" loading="lazy">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery8.avif" alt="Artisanat local" loading="lazy">
                     </div>
                     <div class="gallery-item" tabindex="0" aria-label="lieux de vie traditionnel">
-                        <img class="gallery-img" src="public/assets/gallery10.avif" alt="Artisanat local" loading="lazy">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery10.avif" alt="Artisanat local" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -229,6 +228,9 @@
         </div>
     </footer>
 
+    <script src="js/cache.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/performance.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
 @import url('css/variables.css');
 @import url('css/layout.css');
 @import url('css/components.css');
+@import url('css/cookies.css');
 
 /* Reset and base styles */
 * {
@@ -392,6 +393,42 @@ p {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* Lazy loading styles */
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+img.error {
+    opacity: 0.5;
+    background: var(--background-light);
+}
+
+/* Animation pour les éléments au scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Validation des formulaires */
+.form-input.valid {
+    border-color: var(--success-color);
+}
+
+.form-input.invalid {
+    border-color: var(--error-color);
 }
 
 .sr-only {

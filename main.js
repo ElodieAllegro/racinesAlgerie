@@ -1,5 +1,17 @@
 // Navigation mobile toggle
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialiser les systèmes de cache et cookies
+    console.log('🚀 Initialisation des systèmes de performance...');
+    
+    // Vérifier si les gestionnaires sont disponibles
+    if (window.cacheManager) {
+        console.log('✅ Gestionnaire de cache initialisé');
+    }
+    
+    if (window.cookieManager) {
+        console.log('✅ Gestionnaire de cookies initialisé');
+    }
+    
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -185,6 +197,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Gestion des messages de feedback
     function showMessage(message, type = 'success') {
+        // Sauvegarder le message dans le cache pour persistance
+        if (window.cacheManager) {
+            window.cacheManager.set('last_message', { message, type, timestamp: Date.now() }, 5 * 60 * 1000);
+        }
+        
         const messageDiv = document.createElement('div');
         messageDiv.className = `message message-${type}`;
         messageDiv.textContent = message;
@@ -223,6 +240,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // Exposer la fonction showMessage globalement
     window.showMessage = showMessage;
     
+    // Fonction pour sauvegarder les préférences utilisateur
+    function saveUserPreferences(preferences) {
+        if (window.cacheManager) {
+            window.cacheManager.set('user_preferences', preferences, 30 * 24 * 60 * 60 * 1000); // 30 jours
+        }
+    }
+    
+    // Fonction pour charger les préférences utilisateur
+    function loadUserPreferences() {
+        if (window.cacheManager) {
+            return window.cacheManager.get('user_preferences') || {};
+        }
+        return {};
+    }
+    
+    // Appliquer les préférences utilisateur
+    const userPrefs = loadUserPreferences();
+    if (userPrefs.theme) {
+        document.documentElement.setAttribute('data-theme', userPrefs.theme);
+    }
+    
+    // Exposer les fonctions de préférences
+    window.saveUserPreferences = saveUserPreferences;
+    window.loadUserPreferences = loadUserPreferences;
+    
 // Gestion du scroll pour le header sticky
 // Force le header à toujours rester visible
 const header = document.querySelector('.header');
@@ -230,13 +272,7 @@ header.style.transform = 'translateY(0)';
 
 
     // Préchargement des images au survol
-    const imageContainers = document.querySelectorAll('.service-image, .gallery-item');
-    imageContainers.forEach(container => {
-        container.addEventListener('mouseenter', () => {
-            // Simuler le préchargement d'images
-            container.style.backgroundSize = 'cover';
-        });
-    });
+    // Cette fonctionnalité est maintenant gérée par PerformanceOptimizer
     
     // Gestion des erreurs JavaScript
     window.addEventListener('error', (e) => {
@@ -245,17 +281,34 @@ header.style.transform = 'translateY(0)';
     });
     
     // Performance: lazy loading pour les éléments non critiques
-    const lazyElements = document.querySelectorAll('.gallery-item, .blog-image');
-    const lazyObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('loaded');
-                lazyObserver.unobserve(entry.target);
-            }
-        });
+    // Cette fonctionnalité est maintenant gérée par PerformanceOptimizer
+    
+    // Écouter les événements de consentement des cookies
+    window.addEventListener('cookieConsentUpdated', (event) => {
+        const consent = event.detail;
+        console.log('Consentement cookies mis à jour:', consent);
+        
+        // Activer/désactiver les fonctionnalités selon le consentement
+        if (consent.preferences.analytics) {
+            // Activer Google Analytics ou autres outils d'analyse
+            console.log('Analytics activé');
+        }
+        
+        if (consent.preferences.marketing) {
+            // Activer les pixels de tracking, etc.
+            console.log('Marketing activé');
+        }
     });
     
-    lazyElements.forEach(el => lazyObserver.observe(el));
+    // Fonction pour gérer les erreurs de cache
+    window.addEventListener('error', (e) => {
+        if (e.filename && e.filename.includes('cache')) {
+            console.warn('Erreur de cache détectée, nettoyage...', e);
+            if (window.cacheManager) {
+                window.cacheManager.clear();
+            }
+        }
+    });
 });
 
 // Utilitaires globaux
@@ -290,35 +343,33 @@ window.utils = {
             clearTimeout(timeout);
             timeout = setTimeout(later, wait);
         };
+    },
+    
+    // Fonction pour tracker les événements avec consentement
+    trackEvent: (eventName, properties = {}) => {
+        // Vérifier le consentement avant de tracker
+        if (window.cookieManager && window.cookieManager.hasConsent('analytics')) {
+            console.log('Event tracked:', eventName, properties);
+            // Ici vous pourriez intégrer Google Analytics, Mixpanel, etc.
+        }
+    },
+    
+    // Fonction pour optimiser les images
+    optimizeImage: (img, quality = 0.8) => {
+        if (img.complete && img.naturalHeight !== 0) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+            ctx.drawImage(img, 0, 0);
+            return canvas.toDataURL('image/jpeg', quality);
+        }
+        return null;
     }
 };
 
 // Analytics et tracking (placeholder)
-window.trackEvent = function(eventName, properties = {}) {
-    // Ici vous pourriez intégrer Google Analytics, Mixpanel, etc.
-    console.log('Event tracked:', eventName, properties);
-};
+window.trackEvent = window.utils.trackEvent;
 
 // Gestion des cookies (placeholder pour conformité RGPD)
-window.cookieConsent = {
-    show: () => {
-        // Afficher la bannière de cookies
-        console.log('Cookie consent banner should be shown');
-    },
-    
-    accept: () => {
-        localStorage.setItem('cookieConsent', 'accepted');
-        // Activer les cookies non essentiels
-    },
-    
-    decline: () => {
-        localStorage.setItem('cookieConsent', 'declined');
-        // Désactiver les cookies non essentiels
-    }
-};
-
-// Initialisation des cookies au chargement
-if (!localStorage.getItem('cookieConsent')) {
-    // En production, afficher la bannière de cookies
-    // window.cookieConsent.show();
-}
+// Cette fonctionnalité est maintenant gérée par CookieManager
