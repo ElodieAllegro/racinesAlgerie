@@ -33,6 +33,15 @@
     color: var(--primary-color);
     margin: 0;
 }
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 60px;
+    height: 60px;
+    margin-right: var(--spacing-sm);
+}
 
 .nav-toggle {
     display: none;
