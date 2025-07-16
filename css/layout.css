@@ -381,7 +381,9 @@
         background: var(--background-light);
         margin-top: var(--spacing-sm);
     }
-    
+    .section-title{
+        font-size: var(--font-size-xl);
+    }
     .intro-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
