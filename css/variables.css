@@ -1,0 +1,60 @@
+/* CSS Variables - Couleurs, espacements et autres constantes */
+
+:root {
+    /* Couleurs principales */
+    --primary-color: #4A90E2;
+    --primary-dark: #2C3E50;
+    --secondary-color: #cb6b2b;
+    --secondary-dark: #D35400;
+    --accent-color: #27AE60;
+    --error-color: #E74C3C;
+    --warning-color: #F39C12;
+    --success-color: #2ECC71;
+    
+    /* Couleurs de texte */
+    --text-primary: #2C3E50;
+    --text-secondary: #2e4153;
+    --text-light: #FFFFFF;
+    
+    /* Couleurs de fond */
+    --background-light: #FAFBFC;
+    --background-white: #FFFFFF;
+    --border-color: #E1E8ED;
+    
+    /* Ombres */
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
+    
+    /* Typographie */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-xs: 0.875rem;
+    --font-size-sm: 1rem;
+    --font-size-md: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    
+    /* Espacements */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    
+    /* Bordures et transitions */
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        --border-color: #000000;
+    }
+}
