@@ -5,6 +5,7 @@
 @import url('css/layout.css') screen;
 @import url('css/components.css') screen;
 @import url('css/cookies.css') screen;
+@import url('css/reviews.css') screen;
 
 /* Reset and base styles */
 * {
