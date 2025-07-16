@@ -177,6 +177,7 @@
 .reviews-cta p {
     color: var(--text-secondary);
     margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-md);
 }
 
 .google-review-btn {

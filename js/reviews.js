@@ -8,65 +8,55 @@ class GoogleReviewsManager {
     }
 
     init() {
-        // Simuler des avis Google (à remplacer par de vrais avis)
+        // Vrais avis Google de Racines d'Algérie
         this.reviews = [
             {
                 id: 1,
-                name: "Sarah M.",
-                avatar: "S",
+                name: "Fatima NOUREDDINE",
+                avatar: "F",
                 rating: 5,
-                date: "Il y a 2 semaines",
-                text: "Service exceptionnel ! Karim m'a accompagnée pour mes démarches de nationalité algérienne. Très professionnel, patient et efficace. Je recommande vivement !",
-                service: "Accompagnement Consulat",
+                date: "Il y a un jour",
+                text: "J'ai découvert Racines D'Algérie en mars et ça m'a tout de suite parlé. Je ne pas hésité à prendre contact avec Karim. À l'écoute, avec beaucoup de respect et de bienveillance, il m'a accompagnée dans mes démarches.",
+                service: "Consulting Voyage",
                 verified: true
             },
             {
                 id: 2,
-                name: "Ahmed B.",
-                avatar: "A",
+                name: "Tido",
+                avatar: "T",
                 rating: 5,
                 date: "Il y a 1 mois",
-                text: "Excellent accompagnement pour mon voyage en Algérie. L'accueil à l'aéroport d'Alger était parfait, très rassurant pour un premier voyage. Merci !",
-                service: "Accueil Aéroport",
+                text: "J'ai eu une bonne expérience avec Racines d'Algérie. Je recommande",
+                service: "Consulting Voyage",
                 verified: true
             },
             {
                 id: 3,
-                name: "Fatima L.",
-                avatar: "F",
+                name: "Hurst Lioba",
+                avatar: "H",
                 rating: 5,
-                date: "Il y a 3 semaines",
-                text: "Le consulting voyage m'a fait gagner un temps précieux. Itinéraire parfaitement adapté à mes envies, conseils très utiles. Une expérience inoubliable !",
-                service: "Consulting Voyage",
+                date: "Il y a 1 mois",
+                text: "Karim nous a accompagné dans la vérification des documents pour une demande de visa touristique. Il est de bons conseils, à l'écoute et très disponible pour le client, il est aussi professionnel qu'humain. Je le recommande vivement",
+                service: "Accompagnement Consulat",
                 verified: true
             },
             {
                 id: 4,
-                name: "Mohamed K.",
-                avatar: "M",
-                rating: 5,
-                date: "Il y a 1 semaine",
-                text: "Accompagnement sur place fantastique ! Notre guide était passionné et connaissait parfaitement la région. Nous avons découvert des lieux magnifiques.",
-                service: "Accompagnement sur Place",
-                verified: true
-            },
-            {
-                id: 5,
-                name: "Yasmine R.",
-                avatar: "Y",
+                name: "Samir Ouriachi",
+                avatar: "S",
                 rating: 5,
                 date: "Il y a 2 mois",
-                text: "Service client au top ! Réponses rapides, conseils personnalisés. L'équipe est vraiment à l'écoute et professionnelle. Je recommande sans hésiter.",
+                text: "Je tiens à remercier Karim qui par l'intermédiaire de Racine d'Algerie m'a permis de passer le pas, et retrouver mon pays d'origine et de cœur. Après des années d'hésitation, j'ai enfin franchi le pas grâce à ses conseils.",
                 service: "Consulting Voyage",
                 verified: true
             },
             {
-                id: 6,
-                name: "Karim D.",
-                avatar: "K",
-                rating: 4,
-                date: "Il y a 1 mois",
-                text: "Très bonne expérience pour l'accompagnement consulaire. Processus simplifié et bien expliqué. Petit bémol sur les délais mais résultat au rendez-vous.",
+                id: 5,
+                name: "Djilali Feghouli",
+                avatar: "D",
+                rating: 5,
+                date: "Il y a 3 mois",
+                text: "J'ai contacté Karim début 2025, pour me conseiller sur les formalités administratives pour un renouvellement de passeport Algérien, tout a été facilité grâce à ses conseils précieux et son accompagnement professionnel.",
                 service: "Accompagnement Consulat",
                 verified: true
             }
