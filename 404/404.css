@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 - Page introuvable</title>
-  <style>
-    :root {
+:root {
       --primary-color: #E67E22; /* orange chaleureux */
       --secondary-color: #4A90E2; /* bleu méditerranéen */
       --text-primary: #2C3E50;
@@ -70,15 +63,3 @@
         font-size: 1.5rem;
       }
     }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>404</h1>
-    <h2>Cette page s’est perdue dans les méandres du bled…</h2>
-    <p>Pas de panique, même les meilleurs se perdent parfois entre deux cousins au douar ou dans les souvenirs de famille.</p>
-    <p>Tu peux revenir à la page d’accueil et retrouver tes repères — et peut-être un peu de nostalgie au passage 🇩🇿</p>
-    <a href="/">Retour à l’accueil</a>
-  </div>
-</body>
-</html>

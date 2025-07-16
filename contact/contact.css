@@ -1,0 +1,168 @@
+ /* Footer */
+        footer {
+            background: #2c3e50;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Social links (global + footer override) */
+        .social-links,
+        footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        footer .social-links {
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Icon buttons (global + footer override) */
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #f2f2f2;
+            color: #444;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        footer .social-link {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 20px;
+        }
+
+        /* Hover effects */
+        .social-link:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link.facebook:hover {
+            background: #1877F2;
+            color: #fff
+        }
+
+        .social-link.instagram:hover {
+            background: radial-gradient(circle at 30%30%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: #fff;
+        }
+
+        .social-link.linkedin:hover {
+            background: #0077B5;
+            color: #fff
+        }
+
+        /* Contact grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-3xl);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+
+        .contact-info {
+            background: var(--background-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .contact-item {
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .contact-item h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-md);
+        }
+
+        .contact-item p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .contact-form-container {
+            background: var(--background-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            cursor: pointer;
+            font-size: var(--font-size-xs);
+            line-height: 1.4;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .faq-section {
+            background: var(--background-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .faq-item {
+            padding: var(--spacing-lg);
+            background: var(--background-light);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .faq-item h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-md);
+        }
+
+        .faq-item p {
+            margin: 0;
+            font-size: var(--font-size-sm);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
