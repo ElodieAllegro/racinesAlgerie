@@ -44,6 +44,9 @@ p {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card:hover {
@@ -53,16 +56,29 @@ p {
 
 .service-content {
     padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .service-content h3 {
     color: var(--text-primary);
     margin-bottom: var(--spacing-md);
+    min-height: 3em;
+    display: flex;
+    align-items: center;
 }
 
 .service-content p {
     color: var(--text-secondary);
     margin-bottom: var(--spacing-lg);
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.service-button {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .service-image {
@@ -313,6 +329,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-xl);
+    align-items: stretch;
     margin-bottom: var(--spacing-3xl);
 }
 
