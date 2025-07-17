@@ -42,52 +42,62 @@ p {
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
 }
 
 .service-content {
-    display: flex;
-    flex-direction: column;
-    padding: var(--spacing-lg);
-    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+    color: white;
+    padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-lg);
+    z-index: 2;
 }
 
 .service-content h3 {
-    color: var(--text-primary);
+    color: white;
     margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
 }
 
 .service-content p {
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: var(--spacing-lg);
-    flex-grow: 1;
+    line-height: 1.5;
 }
 
 .service-button {
-    margin-top: auto;
-    align-self: flex-start;
-    width: fit-content;
+    background-color: var(--background-white);
+    color: var(--text-primary);
+    border: none;
+    font-weight: 600;
 }
 
 .service-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.service-consulting {
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: var(--primary-color);
 }
 
 .service-consulat {
-    background: linear-gradient(45deg, var(--secondary-color), var(--warning-color));
+    background: var(--secondary-color);
 }
 
 .service-aeroport {
-    background: linear-gradient(45deg, var(--primary-dark), var(--primary-color));
+    background: var(--primary-dark);
 }
 
 .service-accompagnement {
-    background: linear-gradient(45deg, var(--accent-color), var(--success-color));
+    background: var(--accent-color);
 }
 
 .service-consulting img,
@@ -97,7 +107,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    padding: var(--spacing-md);
+    transition: var(--transition);
 }
 
 /* Gallery Section */
@@ -116,8 +126,8 @@ p {
     overflow: hidden;
 }
 
-.gallery-item:hover {
-    transform: scale(1.05);
+.service-card:hover .service-image {
+    transform: scale(1.1);
     box-shadow: var(--shadow-hover);
 }
 
