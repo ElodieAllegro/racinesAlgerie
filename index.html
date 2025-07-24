@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Racines d’Algérie | Là où commence l’histoire que vous portez en vous</title>
+    <meta name="description"
+        content="Et si votre prochain voyage vous emmenait là où tout a commencé ? Avec Racines d’Algérie, partez à la rencontre de vos origines et reconnectez-vous à l’histoire qui vit encore en vous. Un accompagnement sur mesure, intime et authentique.">
+
+    <!-- DNS Prefetch pour les domaines externes -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+
+    <!-- Preconnect pour les ressources critiques -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload des ressources critiques -->
+    <link rel="preload" as="image" href="public/assets/hero-img.avif">
+    <link rel="preload" href="css/variables.css" as="style">
+    <link rel="preload" href="css/layout.css" as="style">
+
+
+    <!-- CSS critique inline -->
+    <style>
+        /* CSS critique pour éviter le FOUC */
+        :root {
+            --primary-color: #4A90E2;
+            --primary-dark: #2C3E50;
+            --secondary-color: #cb6b2b;
+            --text-primary: #2C3E50;
+            --text-light: #FFFFFF;
+            --background-light: #FAFBFC;
+            --background-white: #FFFFFF;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background-light);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            background-color: var(--background-light);
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgb(0 0 0 / 16%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            text-align: center;
+            padding: 0 0 30px 0;
+            color: rgb(255, 255, 255);
+        }
+        .hero-subtitle {
+            margin-bottom:20px ;
+        }
+
+
+        .cta-button {
+            display: inline-block;
+            padding: var(--spacing-xl) var(--spacing-xl);
+            background-color: var(--background-white);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+    </style>
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    </noscript>
+</head>
+
+<body>
+    <!-- <header class="header">
+        <nav class="nav" aria-label="Navigation principale">
+            <div class="nav-container">
+                <div class="logo-box">
+                <img src="public/assets/logo.svg" alt="Logo Racines d'Algérie" class="logo-img">
+                </div>
+                <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="accompagnement/consulting-voyage.html">Consulting Voyage</a></li>
+                            <li><a href="accompagnement/accompagnement-consulat.html">Accompagnement Consulat</a></li>
+                            <li><a href="accompagnement/accueil-aeroport.html">Accueil Aéroport</a></li>
+                            <li><a href="accompagnement/accompagnement-place.html">Accompagnement sur Place</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog/blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contact/contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header> -->
+<header class="header">
+        <div class="header-top">
+            <span><i class="fa fa-envelope"></i> racinesdalgerie@gmail.com</span>
+            <span><i class="fa fa-phone"></i> +33 7 82 30 17 80</span>
+        </div>
+
+        <div class="nav-wrapper">
+            <!-- Logo qui dépasse -->
+            <div class="logo-box">
+                <img src="public/assets/logo.svg" alt="Logo Racines d'Algérie" class="logo-img">
+            </div>
+
+            <nav class="nav" aria-label="Navigation principale">
+                <div class="nav-container">
+                    <!-- Toggle pour mobile -->
+                    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                        <li class="nav-dropdown">
+                            <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="accompagnement/consulting-voyage.html">Consulting Voyage</a></li>
+                                <li><a href="accompagnement/accompagnement-consulat.html">Accompagnement Consulat</a>
+                                </li>
+                                <li><a href="accompagnement/accueil-aeroport.html">Accueil Aéroport</a></li>
+                                <li><a href="accompagnement/accompagnement-place.html">Accompagnement sur Place</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog/blog.html" class="nav-link">Blog</a></li>
+                        <li><a href="contact/contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+        
+            <img src="public/assets/hero-img.avif" alt="Paysage algérien au lever du soleil" class="hero-img"
+                loading="eager" decoding="async" />
+            <div class="hero-content">
+                <h1 class="hero-title">Reconnectez-vous à vos racines <br> avec Racines d’Algérie</h1>
+                <p class="hero-subtitle">Un accompagnement humain et sur-mesure pour découvrir l'Algérie autrement</p>
+                <a href="#services" class="cta-button">Découvrir nos services</a>
+            </div>
+        </section>
+
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-grid">
+                    <div class="intro-text">
+                        <h2>Vous souhaitez découvrir l'Algérie, renouer avec vos racines ou effectuer des démarches
+                            administratives?</h2>
+                        <p>Vous ne savez pas par où commencer ?</p>
+                        <a href="#services" class="secondary-button">On s'occupe de tout</a>
+                    </div>
+                    <div class="intro-image" aria-hidden="true">
+                        <img class="images" src="public/assets/intro-image.avif" alt="architecture algérienne"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <div class="container">
+                <h2 class="section-title">Chez Racines d'Algérie: Nous vous accompagnons de A à Z</h2>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <h3>Un service sur-mesure adapté à vos besoins.</h3>
+                    </div>
+                    <div class="value-item">
+                        <h3>Des conseils personnalisés pour voyager en toute confiance.</h3>
+                    </div>
+                    <div class="value-item">
+                        <h3>Une expertise pour simplifier vos démarches administratives.</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section" aria-labelledby="services-title">
+            <div class="container">
+                <h2 id="services-title" class="section-title">Nos Services</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-image service-consulting" aria-hidden="true">
+                            <img class="images" src="public/assets/Consulting.avif" alt="image d'un ordinateur"
+                                loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Consulting Voyage – Planifiez votre séjour</h3>
+                            <p>Vous souhaitez découvrir l'Algérie, mais ne savez pas par où commencer ? Nous vous aidons
+                                à organiser un voyage sur-mesure, adapté à vos envies, votre budget et vos affinités.
+                            </p>
+                            <a href="accompagnement/consulting-voyage.html" class="service-button">Découvrir les
+                                formules</a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-image service-consulat" aria-hidden="true">
+                            <img class="images" src="public/assets/Accompagnement.jpeg" alt="image d'un passeport"
+                                loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Accompagnement administratif au consulat</h3>
+                            <p>Vous avez besoin d'aide pour vos démarches consulaires ? Nous vous assistons pour obtenir
+                                votre visa, carte consulaire ou nationalité algérienne en toute simplicité.</p>
+                            <a href="accompagnement/accompagnement-consulat.html" class="service-button">Découvrir les
+                                formules</a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-image service-aeroport" aria-hidden="true">
+                            <img class="images" src="public/assets/accueil-assistance-aeroport.avif"
+                                alt="image d'un aeroport" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Accueil et assistance à l'aéroport – Arrivez en toute sérénité</h3>
+                            <p>Pour une arrivée sans stress en Algérie, nous proposons un accueil personnalisé aux
+                                aéroports et une assistance pour toutes vos premières démarches essentielles.</p>
+                            <a href="accompagnement/accueil-aeroport.html" class="service-button">Découvrir les
+                                formules</a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-image service-accompagnement" aria-hidden="true">
+                            <img class="images" src="public/assets/Accompagnement-sur-place.avif"
+                                alt="image d'un guide touristique" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Accompagnement sur place – Voyagez en toute sérénité</h3>
+                            <p>Voyager en Algérie, c'est une aventure unique... mais cela peut aussi être source de
+                                stress et d'incertitudes, surtout si c'est la première fois!</p>
+                            <a href="accompagnement/accompagnement-place.html" class="service-button">Découvrir les
+                                formules</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section" aria-labelledby="gallery-title">
+            <div class="container">
+                <h2 id="gallery-title" class="section-title">Galerie photos de clients</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" tabindex="0" aria-label="Architecture ruine">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery1.avif"
+                            alt="architecture traditionnelle algérienne" loading="lazy">
+                    </div>
+                    <div class="gallery-item" tabindex="0" aria-label="ville vu de haut">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery2.avif"
+                            alt="ville vu de haut " loading="lazy">
+                    </div>
+                    <div class="gallery-item" tabindex="0" aria-label="rue d'Alger">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery3.avif"
+                            alt="rue d'Alger" loading="lazy">
+                    </div>
+                    <div class="gallery-item" tabindex="0" aria-label="Côte méditerranéenne">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery4.avif"
+                            alt="Côte méditerranéenne port" loading="lazy">
+                    </div>
+                    <div class="gallery-item" tabindex="0" aria-label="Vu des collines">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery5.avif"
+                            alt="Vu des collines" loading="lazy">
+                    </div>
+                    <div class="gallery-item" tabindex="0" aria-label="Artisanat local">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery6.avif"
+                            alt="Artisanat local" loading="lazy">
+                    </div>
+                    <div class="gallery-item" tabindex="0" aria-label="Monuments historiques">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery7.avif"
+                            alt="Artisanat local" loading="lazy">
+                    </div>
+                    <div class="gallery-item" tabindex="0" aria-label="Eglise Alger">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery8.avif"
+                            alt="Artisanat local" loading="lazy">
+                    </div>
+                    <div class="gallery-item" tabindex="0" aria-label="lieux de vie traditionnel">
+                        <img class="gallery-img animate-on-scroll" data-src="public/assets/gallery10.avif"
+                            alt="Artisanat local" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section" aria-labelledby="reviews-title">
+            <div class="container">
+                <div id="reviews-container">
+                    <!-- Les avis seront générés par JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-preview">
+            <div class="container">
+                <h2>Contactez-nous</h2>
+                <p>Prêt à découvrir l'Algérie ? Contactez-nous pour planifier votre voyage sur-mesure.</p>
+                <a href="contact/contact.html" class="cta-button">Nous contacter</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Racines d'Algérie</h3>
+                    <p>Votre partenaire pour découvrir l'Algérie</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>+33 7 82 30 17 80</p>
+                    <p>+213 76 72 86 91</p>
+                    <p>racinesdalgerie@gmail.com</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Liens utiles</h4>
+                    <ul>
+                        <li><a href="mentions-legales/mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="mentions-legales/cgv.html">Conditions générales de vente</a></li>
+                        <li><a href="contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/people/Racines-dAlg%C3%A9rie/61567031167077/"
+                            class="social-link facebook" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/racinesdalgerie/" class="social-link instagram"
+                            aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/karim-hanni-abbb24336/" class="social-link linkedin"
+                            aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@racines.dalgerie" class="social-link tiktok"
+                            class="social-link" aria-label="TikTok" aria-label="tiktok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Racines d'Algérie. Tous droits réservés.</p>
+                <p>Site réalisé par <a href="https://ea-webagency.fr/" target="_blank">ae-webagency</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cache.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/performance.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
