@@ -493,6 +493,6 @@ img.error {
 @media (max-width: 480px) {
     .service-content,
     .service-details {
-        padding: var(--spacing-md);
+        padding: var(--spacing-xl);
     }
 }
