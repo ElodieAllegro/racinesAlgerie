@@ -1,3 +1,6 @@
+import './js/cache.js';
+import './js/performance.js';
+import './js/reviews.js';
 // Chargement asynchrone des ressources non‑critiques
 function loadNonCriticalResources() {
   const fontAwesome = document.createElement('link');
@@ -99,6 +102,7 @@ function initializeApp() {
   document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
     const link = dropdown.querySelector('.nav-link');
     const menu = dropdown.querySelector('.dropdown-menu');
+    
     link.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -110,10 +114,43 @@ function initializeApp() {
         }
       }
     });
+    
+    // Gestion clavier dans le menu dropdown
     menu.addEventListener('keydown', e => {
+      const menuLinks = menu.querySelectorAll('a');
+      const currentIndex = Array.from(menuLinks).indexOf(document.activeElement);
+      
       if (e.key === 'Escape') {
         link.setAttribute('aria-expanded', 'false');
         link.focus();
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const nextIndex = currentIndex < menuLinks.length - 1 ? currentIndex + 1 : 0;
+        menuLinks[nextIndex].focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prevIndex = currentIndex > 0 ? currentIndex - 1 : menuLinks.length - 1;
+        menuLinks[prevIndex].focus();
+      }
+    });
+
+    // Permettre la navigation normale sur les liens du dropdown
+    menu.querySelectorAll('a').forEach(dropdownLink => {
+      dropdownLink.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+          // Laisser le comportement par défaut (navigation)
+          // Ne pas empêcher la navigation avec preventDefault()
+        }
+      });
+    });
+  });
+
+  // Fermer les dropdowns au clic extérieur
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+      const link = dropdown.querySelector('.nav-link');
+      if (!dropdown.contains(e.target)) {
+        link.setAttribute('aria-expanded', 'false');
       }
     });
   });

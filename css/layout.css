@@ -177,7 +177,8 @@
     position: relative;
 }
 
-.nav-dropdown:hover .dropdown-menu {
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown .nav-link[aria-expanded="true"] + .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
